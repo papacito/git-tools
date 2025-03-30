@@ -59,4 +59,4 @@ git push --force
 ```
 
 ---
-Built by [Michał Kozioł (@papacito)](https://github.com/papacito)_
+Built by [Michał Kozioł (@papacito)](https://github.com/papacito)
