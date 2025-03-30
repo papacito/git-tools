@@ -1,13 +1,35 @@
 # git-author-cleaner
 
 Clean up your Git history by rewriting all commits with a new author — while preserving original commit and author dates.
-
 Perfect for fixing cached work emails, cleaning old repos, and keeping your GitHub contribution graph accurate.
+
+## When to use
+- You accidentally used a work Git config on a side project
+- You want to open-source a project under your personal identity
+- You’re migrating old code into a cleaned-up repo
+
+## Installation (make globally available)
+
+To use the tools globally in your terminal, you can add the repo to your system `PATH`
+
+# Clone the repo
+```bash
+git clone https://github.com/papacito/git-tools.git ~/.git-tools
+```
+
+# Add it to your shell config (e.g., ~/.zshrc or ~/.bashrc)
+```bash
+echo 'export PATH="$HOME/.git-tools:$PATH"' >> ~/.zshrc
+```
+# Apply the change
+```bash
+source ~/.zshrc
+```
 
 ## Usage
 
 ```shell
-./git-author-cleaner.sh "Your Name <you@example.com>"
+git-author-cleaner.sh "Your Name <you@example.com>"
 ```
 
 - Rewrites all commits in the current branch (starting from root)
@@ -18,11 +40,6 @@ This operation rewrites Git history. You’ll need to force-push your branch aft
 ```shell
 git push --force
 ```
-
-## When to use
-- You accidentally used a work Git config on a side project
-- You want to open-source a project under your personal identity
-- You’re migrating old code into a cleaned-up repo
 
 ---
 Built by [Michał Kozioł (@papacito)](https://github.com/papacito)
