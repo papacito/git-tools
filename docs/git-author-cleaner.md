@@ -1,4 +1,4 @@
-_# git-author-cleaner
+# git-author-cleaner
 
 Clean up your Git history by rewriting all commits with a new author — while preserving original commit and author dates.
 Perfect for fixing cached work emails, cleaning old repos, and keeping your GitHub contribution graph accurate.
