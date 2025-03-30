@@ -12,16 +12,16 @@ Perfect for fixing cached work emails, cleaning old repos, and keeping your GitH
 
 To use the tools globally in your terminal, you can add the repo to your system `PATH`
 
-# Clone the repo
+### Clone the repo
 ```bash
 git clone https://github.com/papacito/git-tools.git ~/.git-tools
 ```
 
-# Add it to your shell config (e.g., ~/.zshrc or ~/.bashrc)
+### Add it to your shell config (e.g., ~/.zshrc or ~/.bashrc)
 ```bash
 echo 'export PATH="$HOME/.git-tools:$PATH"' >> ~/.zshrc
 ```
-# Apply the change
+### Apply the change
 ```bash
 source ~/.zshrc
 ```
