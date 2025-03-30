@@ -15,7 +15,7 @@ Use cases:
 - Maintain GitHub contribution graph accuracy
 - Prepare code for open-source without leaking internal identity
 
-[See tool details](./git-author-cleaner.md)
+[See tool details](./docs/git-author-cleaner.md)
 
 ## License
 
