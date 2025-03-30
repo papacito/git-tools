@@ -10,8 +10,23 @@ if [ -z "$NEW_AUTHOR" ]; then
   exit 1
 fi
 
-# Safety check
-echo "⚠️WARNING: This will rewrite ALL commits in this branch."
+echo "🔍 Inspecting Git history..."
+COMMIT_COUNT=$(git rev-list --count HEAD)
+COMMIT_CHANGE_COUNT=$((COMMIT_COUNT-1))
+
+echo "🧼 Preparing to rewrite $COMMIT_CHANGE_COUNT commits with author:"
+echo "   $NEW_AUTHOR"
+
+# Safety checks
+if [[ -n $(git ls-files --others --exclude-standard) ]]; then
+  echo "⚠️ Untracked files detected! Please clean your working directory before proceeding:"
+  echo "    git clean -fd && git reset --hard"
+  echo "Or stash with:"
+  echo "    git stash push -u -m \"pre-rebase cleanup\""
+  exit 1
+fi
+
+echo "⚠️ WARNING: This will rewrite ALL commits in this branch, except for the initial commit."
 read -p "Are you sure you want to proceed? (yes/no): " CONFIRM
 
 if [[ "$CONFIRM" != "yes" ]]; then
@@ -22,7 +37,7 @@ fi
 # -------- Rewriting History -------- #
 echo "Rewriting history with author: $NEW_AUTHOR"
 
-git rebase -i --root --exec \
+git rebase -i HEAD~$COMMIT_CHANGE_COUNT --exec \
   "GIT_COMMITTER_DATE=\$(git show -s --format=%cI) \
    git commit --amend \
    --author=\"$NEW_AUTHOR\" \

@@ -58,5 +58,29 @@ This operation rewrites Git history. You’ll need to force-push your branch aft
 git push --force
 ```
 
+## Possible issues
+
+If you run into an error like this one:
+```shell
+
+```
+
+Try the following command to see if there are any untracked files that need to be removed before the next try
+```shell
+git clean -nd
+```
+If so, stash the files:
+```shell
+git stash push -u -m "pre-rebase cleanup"
+```
+or remove them:
+```shell
+git clean -fd
+```
+or hard reset your working tree and staging area to the last commit
+```shell
+git reset --hard
+```
+
 ---
 Built by [Michał Kozioł (@papacito)](https://github.com/papacito)
