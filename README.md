@@ -6,7 +6,7 @@ Whether you're fixing old commit authors, streamlining history, or preparing ope
 
 ## Available Tools
 
-### [`git-author-cleaner`](./git-author-cleaner)
+### `git-author-cleaner`
 
 Rewrite all commits in the current branch with a new author while preserving original commit and author dates.
 
@@ -15,7 +15,7 @@ Use cases:
 - Maintain GitHub contribution graph accuracy
 - Prepare code for open-source without leaking internal identity
 
-[See tool details](./git-author-cleaner/README.md)
+[See tool details](./git-author-cleaner.md)
 
 ## License
 
