@@ -38,7 +38,7 @@ fi
 echo "Rewriting history with author: $NEW_AUTHOR"
 
 git rebase -i HEAD~$COMMIT_CHANGE_COUNT --exec \
-  "GIT_COMMITTER_DATE=\$(git show -s --format=%cI) \
+  "GIT_COMMITTER_DATE=\$(git show -s --format=%aI) \
    git commit --amend \
    --author=\"$NEW_AUTHOR\" \
    --no-edit \
